@@ -1,1 +1,13 @@
 message: ORDER-SERVICE load....
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1/training_micro?serverTimezone=UTC
+    username: taufik
+    password: P@ssw0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    change-log: classpath:/db/master.xml
+  jpa:
+    hibernate:
+      ddl-auto: none
