@@ -1,1 +1,29 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: ORDER-SERVICE
+        uri: lb://ORDER-SERVICE
+        predicates:
+        - Path=/api/orders/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: ORDER-SERVICE
+            fallbackUri: forward:/orderServiceFallback
+      - id: BILLING-SERVICE
+        uri: lb://BILLING-SERVICE
+        predicates:
+        - Path=/api/billings/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: BILLING-SERVICE
+            fallbackUri: forward:/billingServiceFallback
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 
