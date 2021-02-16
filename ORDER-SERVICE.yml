@@ -11,3 +11,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://dell-pc:8777/auth/realms/master      
