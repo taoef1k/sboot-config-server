@@ -1,12 +1,15 @@
 spring:
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay
       routes:
       - id: ORDER-SERVICE
         uri: lb://ORDER-SERVICE
         predicates:
         - Path=/api/orders/**
         filters:
+        - RemoveRequestHeader=Cookie
         - name: CircuitBreaker
           args:
             name: ORDER-SERVICE
@@ -16,6 +19,7 @@ spring:
         predicates:
         - Path=/api/billings/**
         filters:
+        - RemoveRequestHeader=Cookie
         - name: CircuitBreaker
           args:
             name: BILLING-SERVICE
