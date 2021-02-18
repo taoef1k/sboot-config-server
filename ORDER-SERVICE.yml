@@ -15,13 +15,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://dell-pc:8777/auth/realms/master      
-
-keycloak:
-  realm: demo
-  auth-server-url: http://dell-pc:8777/auth
-  ssl-required: external
-  resource: springboot-microservice
-  credentials.secret: 774cfa5e-1277-4c4c-8224-aff51ef43eff
-  use-resource-role-mappings: true
-  bearer-only: true
+          issuer-uri: http://dell-pc:8777/auth/realms/demo
