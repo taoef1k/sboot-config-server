@@ -16,3 +16,12 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://dell-pc:8777/auth/realms/master      
+
+keycloak:
+  realm: master
+  auth-server-url: http://dell-pc:8777/auth
+  ssl-required: external
+  resource: spring-with-test-scope
+  credentials.secret: c6480137-1526-4c3e-aed3-295aabcb7609
+  use-resource-role-mappings: true
+  bearer-only: true
