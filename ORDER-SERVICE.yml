@@ -18,10 +18,10 @@ spring:
           issuer-uri: http://dell-pc:8777/auth/realms/master      
 
 keycloak:
-  realm: master
+  realm: demo
   auth-server-url: http://dell-pc:8777/auth
   ssl-required: external
-  resource: spring-with-test-scope
-  credentials.secret: c6480137-1526-4c3e-aed3-295aabcb7609
+  resource: springboot-microservice
+  credentials.secret: 774cfa5e-1277-4c4c-8224-aff51ef43eff
   use-resource-role-mappings: true
   bearer-only: true
