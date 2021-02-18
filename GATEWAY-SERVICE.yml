@@ -9,7 +9,6 @@ spring:
         predicates:
         - Path=/api/orders/**
         filters:
-        - RemoveRequestHeader=Cookie
         - name: CircuitBreaker
           args:
             name: ORDER-SERVICE
@@ -19,7 +18,6 @@ spring:
         predicates:
         - Path=/api/billings/**
         filters:
-        - RemoveRequestHeader=Cookie
         - name: CircuitBreaker
           args:
             name: BILLING-SERVICE
