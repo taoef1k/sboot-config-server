@@ -34,12 +34,9 @@ spring:
             userinfo-uri: http://dell-pc:8777/auth/realms/demo/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
         registration:
-          keycloak-with-test-scope:
-            provider: keycloak
+          keycloak:
             client-id: springboot-microservice
             client-secret: 774cfa5e-1277-4c4c-8224-aff51ef43eff
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
 
 management:
   endpoints:
