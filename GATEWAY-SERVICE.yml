@@ -29,12 +29,12 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://dell-pc:8777/auth/realms/demo
+            issuer-uri: http://dell-pc:8777/auth/realms/spring-cloud-gateway-realm
             user-name-attribute: preferred_username
         registration:
           keycloak:
-            client-id: springboot-microservice
-            client-secret: 774cfa5e-1277-4c4c-8224-aff51ef43eff
+            client-id: spring-cloud-gateway-client
+            client-secret: f1732cc2-8286-4ca6-b187-4abdb2fd36c1
 
 management:
   endpoints:
